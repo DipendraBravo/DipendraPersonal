@@ -32,26 +32,29 @@ jobs:
 
   frontend:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./frontend
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Ensures full history for lock file
 
-      - name: Set up Node.js 20
+      - name: Verify lock file exists
+        run: |
+          cd frontend
+          if [ ! -f package-lock.json ]; then
+            echo "Error: package-lock.json missing!"
+            exit 1
+          fi
+
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
-          cache: 'npm'  # Will use package-lock.json
+          node-version: 20
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci  # Uses package-lock.json
+        working-directory: ./frontend
+        run: npm ci --no-audit
 
-      - name: Build React app
+      - name: Build project
+        working-directory: ./frontend
         run: npm run build
-
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: frontend-build
-          path: frontend/build
