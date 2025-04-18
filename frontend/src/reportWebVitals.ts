@@ -1,6 +1,6 @@
 import { Metric } from 'web-vitals';
 
-const reportWebVitals = (onPerfEntry?: (metric: Metric) => void) => {
+export const reportWebVitals = (onPerfEntry?: (metric: Metric) => void) => {
   if (onPerfEntry && typeof onPerfEntry === 'function') {
     import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
       getCLS(onPerfEntry);
