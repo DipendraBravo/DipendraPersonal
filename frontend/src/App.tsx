@@ -18,6 +18,7 @@ function App() {
         >
           Learn React
         </a>
+        <h1>Dipendra Tamang</h1>
       </header>
     </div>
   );
