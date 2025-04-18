@@ -57,4 +57,6 @@ jobs:
 
       - name: Build project
         working-directory: ./frontend
-        run: npm run build
+        run: |
+          export NODE_OPTIONS=--openssl-legacy-provider
+          npm run build
