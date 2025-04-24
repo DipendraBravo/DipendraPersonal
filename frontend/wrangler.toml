@@ -1,0 +1,7 @@
+name = "your-worker"
+main = "src/index.tsx" # Point to your actual entry file
+compatibility_date = "2024-04-24"
+
+[site]
+bucket = "./build"
+entry-point = "src"
