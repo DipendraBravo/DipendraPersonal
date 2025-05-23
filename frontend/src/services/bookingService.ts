@@ -1,6 +1,7 @@
 // src/services/bookingService.ts
 
-const API_BASE_URL = "http://localhost:8080/api"; // Ensure your Vercel env var is VITE_API_BASE_URL if using Vite
+// const API_BASE_URL = "http://localhost:8080/api"; // Ensure your Vercel env var is VITE_API_BASE_URL if using Vite
+const API_BASE_URL = "http://api.dipendratamang.com/api"; // Ensure your Vercel env var is VITE_API_BASE_URL if using Vite
 
 interface SeatStatusMap {
     [seatNumber: string]: 'available' | 'booked';
