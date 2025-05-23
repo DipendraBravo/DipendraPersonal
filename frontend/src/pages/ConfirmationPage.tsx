@@ -1,6 +1,6 @@
 // src/pages/ConfirmationPage.tsx
 import React from 'react';
-import { useLocation, Link, Navigate } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 
 // Define the structure of the booking details expected from BookingPage
 // This should match what your backend booking creation endpoint returns
