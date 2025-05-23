@@ -1,49 +1,46 @@
-export default function Home() {
+// src/pages/HomePage.tsx
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const HomePage: React.FC = () => {
     return (
-        <div className="min-h-screen bg-gray-50">
-            {/* Hero Section */}
-            <section className="py-20 bg-gradient-to-r from-blue-500 to-blue-700 text-white">
-                <div className="container mx-auto px-4 text-center">
-                    <h1 className="text-5xl font-bold mb-6">Your Journey Starts Here</h1>
-                    <p className="text-xl mb-8 max-w-2xl mx-auto">
-                        Book comfortable vehicle tours with our premium service
+        <div className="hero min-h-[70vh] bg-base-100 rounded-box shadow-xl">
+            <div className="hero-content text-center">
+                <div className="max-w-lg">
+                    <h1 className="text-5xl font-bold text-primary">
+                        Dipendra Transport Services
+                    </h1>
+                    <p className="py-6 text-lg">
+                        Your reliable and comfortable daily passenger vehicle service connecting Birtamode and Ilam.
+                        Book your seats online hassle-free!
                     </p>
-                    <button className="bg-white text-blue-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-50 transition">
-                        Book Now
-                    </button>
+                    <figure className="my-6">
+                        {/* You can add an image of your vehicle or a scenic route photo here */}
+                        {/* Example placeholder: */}
+                        <img
+                            src="https://via.placeholder.com/600x300.png?text=Our+Comfortable+Vehicle" // Replace with your actual image URL
+                            alt="Transport Vehicle"
+                            className="rounded-lg shadow-md mx-auto"
+                            style={{maxWidth: '100%', height: 'auto'}}
+                        />
+                    </figure>
+                    <Link to="/book" className="btn btn-primary btn-lg">
+                        Book Your Seat Now
+                    </Link>
+                    <div className="mt-8 p-4 bg-base-200 rounded-lg">
+                        <h3 className="text-xl font-semibold mb-2">Why Choose Us?</h3>
+                        <ul className="list-disc list-inside text-left space-y-1">
+                            <li>Daily Departures: Birtamode to Ilam & Ilam to Birtamode.</li>
+                            <li>Comfortable 11-Seater Vehicle.</li>
+                            <li>Easy Online Booking System.</li>
+                            <li>Experienced and Friendly Driver.</li>
+                            <li>Punctual and Reliable Service.</li>
+                        </ul>
+                    </div>
                 </div>
-            </section>
-
-            {/* Features Section */}
-            <section className="py-16 container mx-auto px-4">
-                <h2 className="text-3xl font-bold text-center mb-12">Why Choose Us?</h2>
-
-                <div className="grid md:grid-cols-3 gap-8">
-                    {[
-                        {
-                            icon: '🚗',
-                            title: 'Modern Vehicles',
-                            desc: 'Air-conditioned, well-maintained cars and vans'
-                        },
-                        {
-                            icon: '⏱️',
-                            title: 'On Time',
-                            desc: 'Punctual pickups and drop-offs guaranteed'
-                        },
-                        {
-                            icon: '💰',
-                            title: 'Best Prices',
-                            desc: 'Competitive rates with no hidden charges'
-                        }
-                    ].map((feature, index) => (
-                        <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center">
-                            <div className="text-4xl mb-4">{feature.icon}</div>
-                            <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                            <p className="text-gray-600">{feature.desc}</p>
-                        </div>
-                    ))}
-                </div>
-            </section>
+            </div>
         </div>
     );
-}
+};
+
+export default HomePage;
