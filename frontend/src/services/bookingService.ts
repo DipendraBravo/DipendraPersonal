@@ -16,7 +16,7 @@ export interface AvailabilityResponse { // This is what your backend's Availabil
 
 export interface BookingPayload {
     passengerName: string;
-    passengerPhone: string;
+    passengerContactNumber: string;
     passengerEmail?: string; // Make email optional here if it's optional in backend
     routeFrom: string;
     routeTo: string;
@@ -28,7 +28,7 @@ export interface BookingPayload {
 export interface BookingConfirmationData {
     id: number;
     passengerName: string;
-    passengerPhone: string;
+    passengerContactNumber: string;
     passengerEmail?: string;
     routeFrom: string;
     routeTo: string;

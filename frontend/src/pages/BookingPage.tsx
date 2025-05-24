@@ -21,7 +21,7 @@ const BookingPage: React.FC = () => {
     const [selectedSeat, setSelectedSeat] = useState<number | null>(null);
 
     const [passengerName, setPassengerName] = useState<string>("");
-    const [passengerPhone, setPassengerPhone] = useState<string>("");
+    const [passengerContactNumber, setpassengerContactNumber] = useState<string>("");
     const [passengerEmail, setPassengerEmail] = useState<string>(""); // Added email state
 
     const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -67,12 +67,12 @@ const BookingPage: React.FC = () => {
             setError("Please select a seat first.");
             return;
         }
-        if (!passengerName.trim() || !passengerPhone.trim()) {
+        if (!passengerName.trim() || !passengerContactNumber.trim()) {
             setError("Please fill in your Name and Phone Number.");
             return;
         }
         // Basic phone validation (example: Nepali numbers)
-        if (!/^(98|97)\d{8}$/.test(passengerPhone.trim())) {
+        if (!/^(98|97)\d{8}$/.test(passengerContactNumber.trim())) {
             setError("Please enter a valid 10-digit Nepali phone number (starting with 98 or 97).");
             return;
         }
@@ -89,7 +89,7 @@ const BookingPage: React.FC = () => {
 
         const payload: BookingPayload = {
             passengerName: passengerName.trim(),
-            passengerPhone: passengerPhone.trim(),
+            passengerContactNumber: passengerContactNumber.trim(),
             passengerEmail: passengerEmail.trim() || undefined, // Send undefined if blank
             routeFrom: fromLocation,
             routeTo: toLocation,
@@ -112,7 +112,7 @@ const BookingPage: React.FC = () => {
             // but since we navigate, ConfirmationPage will be the new view.
             // setSelectedSeat(null);
             // setPassengerName("");
-            // setPassengerPhone("");
+            // setpassengerContactNumber("");
             // setPassengerEmail("");
             // fetchSeatData(); // Refresh seat availability (might be better on ConfirmationPage return or separate refresh button)
 
@@ -246,8 +246,8 @@ const BookingPage: React.FC = () => {
                                 <input
                                     type="tel"
                                     placeholder="e.g. 98XXXXXXXX"
-                                    value={passengerPhone}
-                                    onChange={e => setPassengerPhone(e.target.value)}
+                                    value={passengerContactNumber}
+                                    onChange={e => setpassengerContactNumber(e.target.value)}
                                     className="input input-bordered w-full"
                                     required
                                     pattern="^(98|97)\d{8}$"

@@ -19,7 +19,7 @@ const AppLayout: React.FC = () => {
             </main>
             <footer className="footer footer-center p-4 bg-base-300 text-base-content">
                 <aside>
-                    <p>Copyright © {new Date().getFullYear()} - All rights reserved by Dipendra Transport</p>
+                    <p>Copyright © {new Date().getFullYear()} - All rights reserved by Dipendra Tamang</p>
                     <p>Birtamode - Ilam Daily Service</p>
                 </aside>
             </footer>
